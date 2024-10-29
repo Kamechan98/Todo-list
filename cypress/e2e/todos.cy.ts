@@ -24,13 +24,17 @@ describe("todos", () => {
     cy.get("#todo-section > li").last().should("contain.text", "Testa todo");
 
     cy.get("#todo-section > li").last().click();
-    cy.get("#todo-section > li")
-      .last()
-      .should("not.have.css", "text-decoration", "line-through");
+    cy.get("#todo-section > li:last h2").should(
+      "have.css",
+      "text-decoration",
+      "line-through solid rgba(255, 255, 255, 0.87)"
+    );
 
-    // cy.get("#todo-section > li").last().click();
-    // cy.get("#todo-section li")
-    //   .last()
-    //   .should("have.css", "text-decoration", "line-through");
+    cy.get("#todo-section > li").last().click();
+    cy.get("#todo-section > li:last h2").should(
+      "not.have.css",
+      "text-decoration",
+      "line-through solid rgba(255, 255, 255, 0.87)"
+    );
   });
 });
