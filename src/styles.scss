@@ -1,0 +1,127 @@
+//VARIABLES
+$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  $line-height: 1.5;
+  $font-weight: 400;
+  $text-color: #ffffffde;
+  $background-color: #242424;
+  $border-color: #f0f0f0;
+  $color-scheme: light dark;
+
+:root {
+    font-family: $font-family;
+    line-height: $line-height;
+    font-weight: $font-weight;
+    color-scheme: $color-scheme;
+    color: $text-color;
+    background-color: $background-color;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+  
+    #todo-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+      #todo-title,
+      #todo-due-date,
+      #todo-priority,
+      #add-todo-btn {
+        height: 40px; 
+        margin: 5px 0; 
+        width: 90%;
+        // margin-left: 5%;
+      }
+    }
+  
+    #sort-container {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%; 
+  
+      #sort-todo,
+      #sort-todos {
+        height: 40px; /* Larger dropdown for mobile */
+        width: 90%; /* Full width on mobile */
+        margin: 5px 0;
+      }
+    }
+  
+    ul {
+      padding: 0;
+    }
+  
+    li {
+        list-style: none;
+        text-transform: capitalize;
+        border: solid 3px $border-color;
+        width: 85%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+  
+    #app {
+      margin: 0 auto;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+  
+  /* Desktop styling (min-width: 768px) */
+  @media (min-width: 768px) {
+    body {
+      align-items: center; /* Center align for larger screens */
+      
+      #todo-form {
+        flex-direction: row; /* Row layout for desktops */
+        justify-content: center;
+        margin-bottom: 20px;
+  
+        #todo-title,
+        #todo-due-date,
+        #todo-priority,
+        #add-todo-btn {
+          width: auto; /* Return to auto width */
+          margin-left: 10px;
+          margin-right: 10px;
+          height: 30px; /* Smaller height on desktop */
+        }
+      }
+  
+      #sort-container {
+        flex-direction: row; /* Row layout for desktops */
+        justify-content: center;
+        margin-top: 20px;
+  
+        #sort-todo,
+        #sort-todos {
+          width: auto;
+          margin-left: 10px;
+          height: 30px;
+        }
+      }
+  
+      li {
+        padding-left: 30px;
+        // padding-right: 30px;
+      }
+    }
+  }
+  
